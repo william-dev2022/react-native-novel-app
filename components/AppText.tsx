@@ -4,7 +4,7 @@ import { StyleSheet, Text, TextProps } from "react-native";
 // Define a type that extends the default TextProps with any additional custom props
 interface CustomTextProps extends TextProps {
   bold?: boolean;
-  size?: number;
+  fontSize?: number;
 }
 
 const styles = StyleSheet.create({
@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   },
   regularText: {
     fontFamily: "Krub_400Regular",
-    // fontFamily: "Poppins_400Regular",
   },
   boldText: {
     fontFamily: "Krub_600SemiBold",
@@ -21,11 +20,17 @@ const styles = StyleSheet.create({
 });
 
 // Create the custom Text component
-const AppText: React.FC<CustomTextProps> = ({ style, bold, ...props }) => {
+const AppText: React.FC<CustomTextProps> = ({
+  style,
+  bold,
+  fontSize,
+  ...props
+}) => {
   return (
     <Text
       style={[
         styles.text,
+        fontSize ? { fontSize } : {},
         bold ? styles.boldText : styles.regularText,
         { color: "black" },
         style,
