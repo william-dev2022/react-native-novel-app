@@ -1,15 +1,10 @@
 import AppText from "@/components/AppText";
 import BookGrid from "@/components/book/BookGrid";
+import CategoryRow from "@/components/CategoryRow";
 import { hp, wp } from "@/helpers/common";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { Image, ImageBackground } from "expo-image";
-import {
-  FlatList,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  View,
-} from "react-native";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
   return (
@@ -115,47 +110,7 @@ export default function HomeScreen() {
         </Pressable>
       </View> */}
       {/* Category Tab Row */}
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          paddingVertical: hp(1),
-          marginTop: hp(1.7),
-        }}
-      >
-        <FlatList
-          data={[
-            "All",
-            "Fiction",
-            "Non-Fiction",
-            "Mystery",
-            "Sci-Fi",
-            "Fantasy",
-          ]}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item}
-          renderItem={({ item, index }) => (
-            <Pressable
-              style={{
-                paddingVertical: 5,
-                paddingHorizontal: 15,
-                borderRadius: 20,
-                backgroundColor: `${index === 0 ? "#4E74F3" : "#fff"}`,
-                marginRight: wp(1.5),
-              }}
-            >
-              <AppText
-                fontSize={14}
-                style={{ color: `${index === 0 ? "white" : "black"}` }}
-              >
-                {item}
-              </AppText>
-            </Pressable>
-          )}
-        />
-      </View>
+      <CategoryRow />
       {/* Featured Book Card */}
       <ImageBackground
         source={require("../../../assets/images/book-cover/cover-1.jpg")}
