@@ -1,11 +1,10 @@
 import {
-  Krub_400Regular,
-  Krub_400Regular_Italic,
-  Krub_500Medium,
-  Krub_500Medium_Italic,
-  Krub_600SemiBold,
+  Literata_400Regular,
+  Literata_400Regular_Italic,
+  Literata_500Medium,
+  Literata_600SemiBold,
   useFonts,
-} from "@expo-google-fonts/krub";
+} from "@expo-google-fonts/literata";
 import {
   DarkTheme,
   DefaultTheme,
@@ -26,11 +25,10 @@ export default function RootLayout() {
 
   // Load custom fonts
   const [loaded, error] = useFonts({
-    Krub_400Regular,
-    Krub_600SemiBold,
-    Krub_500Medium,
-    Krub_400Regular_Italic,
-    Krub_500Medium_Italic,
+    Literata_400Regular,
+    Literata_600SemiBold,
+    Literata_500Medium,
+    Literata_400Regular_Italic,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.

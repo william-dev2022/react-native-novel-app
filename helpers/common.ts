@@ -14,10 +14,10 @@ export const getImageSize = (width: number, height: number) => {
 
 export const numberOfColumn = () => {
   const screenWidth = Dimensions.get("window").width;
-  if (screenWidth >= 1600) return 5;
-  if (screenWidth >= 1024) return 4;
-  if (screenWidth >= 768) return 3;
-  return 2;
+  // if (screenWidth >= 1600) return 5;
+  if (screenWidth >= 1024) return 5;
+  if (screenWidth >= 768) return 4;
+  return 3;
 };
 
 export function capitalizeFirstLetter(text: string) {

@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   regularText: {
-    fontFamily: "Krub_400Regular",
+    fontFamily: "Literata_400Regular",
   },
   boldText: {
-    fontFamily: "Krub_600SemiBold",
+    fontFamily: "Literata_600SemiBold",
   },
 });
 
