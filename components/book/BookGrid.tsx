@@ -1,14 +1,67 @@
 import { hp, numberOfColumn } from "@/helpers/common";
-import { books } from "@/helpers/data";
 import { Image } from "expo-image";
 import React from "react";
-import { FlatList, Pressable } from "react-native";
+import { Pressable, View } from "react-native";
 import AppText from "../AppText";
 
-export default function BookGrid() {
+type Props = {
+  books: IBook[];
+};
+
+export default function BookGrid({ books }: Props) {
   const columns = numberOfColumn();
   return (
-    <FlatList
+    <View
+      style={{
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        marginTop: hp(1.7),
+      }}
+    >
+      {books.map((book) => {
+        return (
+          <Pressable
+            key={book.id}
+            style={{
+              width: `${95 / columns}%`,
+              marginBottom: hp(2),
+              backgroundColor: "#fff",
+              borderRadius: 10,
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 0,
+                height: 2,
+              },
+              shadowOpacity: 0.04,
+            }}
+          >
+            <Image
+              source={book.image}
+              style={{
+                width: "100%",
+                height: hp(20),
+                borderRadius: 5,
+                marginBottom: hp(1),
+              }}
+              contentFit="cover"
+              contentPosition="center"
+            />
+            <AppText bold fontSize={16} numberOfLines={1}>
+              {book.title}
+            </AppText>
+            <AppText fontSize={14} style={{ color: "#666" }}>
+              by Author Name
+            </AppText>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}
+
+{
+  /* <FlatList
       // horizontal
       style={{ marginTop: hp(1.7) }}
       data={books}
@@ -52,6 +105,5 @@ export default function BookGrid() {
           </AppText>
         </Pressable>
       )}
-    />
-  );
+    /> */
 }
