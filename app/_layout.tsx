@@ -6,6 +6,11 @@ import {
   useFonts,
 } from "@expo-google-fonts/literata";
 import {
+  Poppins_400Regular,
+  Poppins_400Regular_Italic,
+  Poppins_600SemiBold,
+} from "@expo-google-fonts/poppins";
+import {
   DarkTheme,
   DefaultTheme,
   ThemeProvider,
@@ -29,6 +34,9 @@ export default function RootLayout() {
     Literata_600SemiBold,
     Literata_500Medium,
     Literata_400Regular_Italic,
+    Poppins_400Regular,
+    Poppins_400Regular_Italic,
+    Poppins_600SemiBold,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.

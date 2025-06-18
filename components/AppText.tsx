@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   regularText: {
-    fontFamily: "Literata_400Regular",
+    fontFamily: "Poppins_400Regular",
   },
   boldText: {
-    fontFamily: "Literata_600SemiBold",
+    fontFamily: "Poppins_600SemiBold",
   },
 });
 

@@ -1,6 +1,6 @@
 import { hp, wp } from "@/helpers/common";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, ImageBackground } from "expo-image";
+import { ImageBackground } from "expo-image";
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 import AppText from "./AppText";
@@ -8,7 +8,7 @@ import AppText from "./AppText";
 export default function FeaturedBook() {
   return (
     <ImageBackground
-      source={require("../assets/images/book-cover/cover-1.jpg")}
+      source={require("../assets/images/book-cover/cover-6.jpg")}
       style={{
         width: wp(94),
         // height: hp(25),
@@ -20,6 +20,7 @@ export default function FeaturedBook() {
         justifyContent: "space-between",
       }}
       // tintColor="#6C63FF"
+      // blurRadius={4}
       contentFit="cover"
       contentPosition="left bottom"
       imageStyle={{
@@ -120,7 +121,13 @@ export default function FeaturedBook() {
           </Pressable>
         </View>
 
-        <View style={{ alignItems: "center", flex: 0.3, marginLeft: wp(2) }}>
+        {/* <View
+          style={{
+            alignItems: "center",
+            flex: 0.3,
+            marginRight: wp(10),
+          }}
+        >
           <Image
             source={require("../assets/images/book-cover/cover-1.jpg")}
             style={{
@@ -132,7 +139,7 @@ export default function FeaturedBook() {
             contentFit="cover"
             contentPosition="center"
           />
-        </View>
+        </View> */}
       </View>
     </ImageBackground>
   );
@@ -141,6 +148,6 @@ export default function FeaturedBook() {
 const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject, // fills the entire background
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // black with 50% opacity
+    backgroundColor: "rgba(0, 0, 0, 0.7)", // black with 50% opacity
   },
 });
